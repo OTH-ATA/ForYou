@@ -5,6 +5,7 @@ import Categories from "../components/Categories";
 import {useMemo, useState} from "react";
 import {useMainContext} from "../config/mainContext";
 import Plates from "../components/Plates";
+import Header from "../components/Header";
 
 export default function Home() {
     const {state} = useMainContext()
@@ -31,8 +32,11 @@ export default function Home() {
             </Head>
 
             <main className={styles.main}>
-              
-                {Page}
+                <Header/>
+                <div className={styles.body}>
+                    {Page}
+                </div>
+
             </main>
 
         </div>
