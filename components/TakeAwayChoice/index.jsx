@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import style from "./takeAwayChoice.module.css"
+import style from "./takeAwaychoice.module.css"
 import Card from '../../commons/Card'
 import {Grid} from "@material-ui/core";
 import {useMainContext} from "../../config/mainContext";
@@ -20,7 +20,8 @@ const TakeAwayChoice = () => {
             <Grid container justifyContent="center" spacing={4}>
                 {
                     choices.map(
-                        e => <Card title={e.name} image={e.img} onClick={() => onClick(e.value)}/>
+                        e => <Card key={e.name} index={e.name} title={e.name} image={e.img}
+                                   onClick={() => onClick(e.value)}/>
                     )
                 }
             </Grid>

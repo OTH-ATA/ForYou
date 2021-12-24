@@ -53,7 +53,8 @@ const Categories = () => {
                 {
                     categoriesList.map(
                         e =>
-                            <Card title={e.name} image={e.img} onClick={() => onClick(e.name)}/>
+                            <Card key={e.name} index={e.name} title={e.name} image={e.img}
+                                  onClick={() => onClick(e.name)}/>
                     )
                 }
 
