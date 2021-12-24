@@ -16,25 +16,29 @@
           "name": "Tacos Chicken",
           "img": "/img/tacosChiken.png",
           "id": 1,
-          "count": 0
+          "count": 0,
+          "price": 30
         },
         {
           "name": "Tacos Meat",
           "img": "/img/tacosMeat.png",
           "id": 2,
-          "count": 0
+          "count": 0,
+          "price": 30
         },
         {
           "name": "Tacos Mixte",
           "img": "/img/tacosMixt.png",
           "id": 3,
-          "count": 0
+          "count": 0,
+          "price": 30
         },
         {
           "name": "Tacos Frida",
           "img": "/img/tacosFrida.png",
           "id": 4,
-          "count": 0
+          "count": 0,
+          "price": 30
         }
       ]
     },

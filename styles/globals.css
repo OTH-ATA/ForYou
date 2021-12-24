@@ -24,3 +24,7 @@ a {
         padding: 0;
     }
 }
+
+.MuiButton-label {
+    font-size: 20px;
+}
