@@ -3,19 +3,24 @@ import styles from '../styles/Home.module.css'
 import TakeAwayChoice from "../components/TakeAwayChoice";
 import Categories from "../components/Categories";
 import {useMemo, useState} from "react";
+import {useMainContext} from "../config/mainContext";
+import Plates from "../components/Plates";
 
 export default function Home() {
-    const [activePage, setActivePage] = useState(2)
+    const {state} = useMainContext()
     const Page = useMemo(
         () => {
-            switch (activePage) {
+            switch (state?.activePage) {
                 case 1:
                     return <TakeAwayChoice/>
                     break;
                 case 2:
                     return <Categories/>
+                    break;
+                case 3:
+                    return <Plates/>
             }
-        }, [activePage]
+        }, [state?.activePage]
     )
     return (
         <div className={styles.container}>

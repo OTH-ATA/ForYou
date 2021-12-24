@@ -6,7 +6,7 @@ import {Grid} from "@material-ui/core";
 const MyCard = (props) => {
     return (
         <Grid key={props.title} item>
-            <Card className={style.container}>
+            <Card className={style.container} onClick={props.onClick}>
                 <CardActionArea>
                     <div className={style.card}>
                         <Image width="100px" height="100px" src={props.image}/>

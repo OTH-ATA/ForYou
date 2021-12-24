@@ -2,19 +2,60 @@ import Image from 'next/image'
 import style from "./categories.module.css"
 import Card from '../../commons/Card'
 import {Grid} from "@material-ui/core";
+import {useMainContext} from "../../config/mainContext";
 
 const Categories = () => {
+    const {setCategory, setActivePage} = useMainContext()
+
+    const onClick = (cat) => {
+        setCategory(cat)
+        setActivePage(3)
+    }
+
+    const categoriesList = [
+        {
+            name: "Burgers",
+            img: "/icons/burger.png"
+        },
+        {
+            name: "Pizza",
+            img: "/icons/pizza.png"
+        },
+        {
+            name: "Tacos",
+            img: "/icons/tacos.png"
+        },
+        {
+            name: "Steak",
+            img: "/icons/meat.png"
+        },
+        {
+            name: "Pasta",
+            img: "/icons/pasta.png"
+        },
+        {
+            name: "Chicken Plate",
+            img: "/icons/chicken.png"
+        },
+        {
+            name: "Drinks",
+            img: "/icons/soda.png"
+        },
+        {
+            name: "Dessert",
+            img: "/icons/iceCream.png"
+        },
+
+    ]
     return (
         <div className={style.container}>
             <Grid container justifyContent="center" spacing={4}>
-                <Card title={'Burgers'} image={'/icons/burger.png'}/>
-                <Card title={'Pizza'} image={'/icons/pizza.png'}/>
-                <Card title={'Tacos'} image={'/icons/tacos.png'}/>
-                <Card title={'Steak'} image={'/icons/meat.png'}/>
-                <Card title={'Pasta'} image={'/icons/pasta.png'}/>
-                <Card title={'chicken plate'} image={'/icons/chicken.png'}/>
-                <Card title={'Drinks'} image={'/icons/soda.png'}/>
-                <Card title={'Dessert'} image={'/icons/iceCream.png'}/>
+                {
+                    categoriesList.map(
+                        e =>
+                            <Card title={e.name} image={e.img} onClick={() => onClick(e.name)}/>
+                    )
+                }
 
 
             </Grid>
