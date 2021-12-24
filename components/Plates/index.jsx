@@ -1,4 +1,4 @@
-import style from "../TakeAwayChoice/TakeAwayChoice.module.css";
+import style from "./plates.module.css";
 import {Grid} from "@material-ui/core";
 import Card from "../../commons/Card";
 import {useMainContext} from "../../config/mainContext";
