@@ -75,7 +75,7 @@
 
 .methodsContainer {
     width: 100%;
-    padding: 30px;
+    padding: 0 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
