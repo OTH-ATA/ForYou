@@ -15,6 +15,11 @@ const Plates = () => {
                                    remove={() => removeItem(e.id)}/>
                     )
                 }
+                {!items?.length > 0 &&
+                <span style={{
+                    fontSize: "20px",
+                    fontWeight: "bold"
+                }}>The items of this category will available soon</span>}
             </Grid>
         </div>
     )

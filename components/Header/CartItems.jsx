@@ -1,10 +1,14 @@
 import {useMainContext} from "../../config/mainContext";
 import style from './header.module.css'
 import Image from "next/image";
-import {Button} from "@material-ui/core";
+import {Button, Modal} from "@material-ui/core";
+import Card from "../../commons/Card";
+import {useState} from "react";
 
 const CartItems = ({setShowCart}) => {
     const {state} = useMainContext()
+
+    const [checkoutOpened, setCheckoutModal] = useState(false);
     const sum = 0
     state.orders.map(
         (e) => {
@@ -29,8 +33,6 @@ const CartItems = ({setShowCart}) => {
                                                 <span className={style.itemsName}>{e.name} * {e.count}</span>
                                                 <span className={style.itemsName}>{e.price * e.count} DH</span>
                                             </li>
-
-
                                         )
                                     )
                                 }
@@ -41,13 +43,35 @@ const CartItems = ({setShowCart}) => {
                             </div>
 
                             <div className={style.buttonContainer}>
-                                <Button variant="contained" color="primary">
+                                <Button variant="contained" color="primary" onClick={() => setCheckoutModal(true)}>
                                     Checkout
                                 </Button>
                             </div>
                         </>
                 }
             </div>
+            <Modal open={checkoutOpened}>
+                <div className={style.modalContainer}>
+
+                    <div className={style.modalInnerContainer}>
+                        <div className={style.closeIcon}>
+                            <Image width="30px" height="30px" src={'/icons/close.png'}
+                                   onClick={() => setCheckoutModal(false)}/>
+                        </div>
+
+                        <div className={style.methodsContainer}>
+                            <Card key={"bank"} index={'bank'} title={"pay by card"} image={"/icons/payByCard.png"}
+                                  onClick={() => {
+                                  }}/>
+                            <Card key={"bank"} index={'bank'} title={"pay by cash"} image={"/icons/cash.png"}
+                                  onClick={() => {
+                                  }}/>
+                        </div>
+
+
+                    </div>
+                </div>
+            </Modal>
         </div>
     )
 }
