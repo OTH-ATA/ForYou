@@ -19,7 +19,7 @@ const Plates = () => {
                 <span style={{
                     fontSize: "20px",
                     fontWeight: "bold"
-                }}>The items of this category will available soon</span>}
+                }}>The items of this category will be available soon</span>}
             </Grid>
         </div>
     )
